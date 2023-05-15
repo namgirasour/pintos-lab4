@@ -485,11 +485,6 @@ struct child_process* add_child_process (int pid)
   cp->load= NOT_LOADED;
   cp->wait = false;
   cp->exit = false;
-  // cp->parent = thread_current();
-  //cp->exit_error=false;
-  //lock_init(&cp->wait_lock);
-  //sema_init (&cp->sys_wait_sema, 0);
-  //lock_init(&cp->wait_lock);
   sema_init(&cp->sema_wait,0);
   list_push_back(&thread_current()->child_list,&cp->elem);
   return cp;
