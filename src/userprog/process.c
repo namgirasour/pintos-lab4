@@ -60,7 +60,7 @@ process_execute (const char *file_name)
     }
   //free(file); // inefficient.  will later reopen file!!
   if (lock_held_by_current_thread(&file_lock)) lock_release(&file_lock);
-  //file_close(file);
+  
   
   /* Create a new thread to execute FILE_NAME. */
   tid = thread_create (file_name, PRI_DEFAULT, start_process, fn_copy);
